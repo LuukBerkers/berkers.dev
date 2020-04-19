@@ -1,0 +1,22 @@
+{
+  "name": "berkers.dev",
+  "version": "1.0.0",
+  "description": "Webserver for berkers.dev",
+  "scripts": {
+    "start": "./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuukBerkers/berkers.dev.git"
+  },
+  "author": "Luuk Berkers",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/LuukBerkers/berkers.dev/issues"
+  },
+  "homepage": "https://github.com/LuukBerkers/berkers.dev#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
