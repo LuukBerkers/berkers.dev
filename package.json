@@ -2,6 +2,11 @@
   "name": "berkers.dev",
   "version": "1.0.0",
   "description": "Webserver for berkers.dev",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
   "scripts": {
     "start": "./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,12 +16,9 @@
     "url": "git+https://github.com/LuukBerkers/berkers.dev.git"
   },
   "author": "Luuk Berkers",
-  "license": "AGPL-3.0-or-later",
+  "license": "AGPL-3.0",
   "bugs": {
     "url": "https://github.com/LuukBerkers/berkers.dev/issues"
   },
-  "homepage": "https://github.com/LuukBerkers/berkers.dev#readme",
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+  "homepage": "https://github.com/LuukBerkers/berkers.dev#readme"
 }
