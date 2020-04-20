@@ -22,15 +22,20 @@
 'use strict';
 
 const app = require('./app');
-const greenlock = require('greenlock-express');
 
-greenlock.init({
-	packageRoot: __dirname,
-	configDir: "./greenlock.d",
+// With Greenlock for production
+// const greenlock = require('greenlock-express');
 
-	// contact for security and critical bug notices
-	maintainerEmail: "berkers.luuk@gmail.com",
+// greenlock.init({
+// 	packageRoot: __dirname,
+// 	configDir: "./greenlock.d",
 
-	// whether or not to run at cloudscale
-	cluster: false
-}).serve(app)
+// 	// contact for security and critical bug notices
+// 	maintainerEmail: "berkers.luuk@gmail.com",
+
+// 	// whether or not to run at cloudscale
+// 	cluster: false
+// }).serve(app)
+
+// For testing only
+app.listen(8080)

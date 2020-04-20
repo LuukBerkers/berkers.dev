@@ -5,7 +5,8 @@
   "main": "server.js",
   "dependencies": {
     "express": "^4.17.1",
-    "greenlock-express": "^4.0.3"
+    "greenlock-express": "^4.0.3",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {},
   "scripts": {
