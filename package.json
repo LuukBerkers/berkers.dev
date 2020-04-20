@@ -2,24 +2,23 @@
   "name": "berkers.dev",
   "version": "1.0.0",
   "description": "Webserver for berkers.dev",
-  "main": "index.js",
-  "dependencies": {
-    "express": "^4.17.1",
-    "greenlock-express": "^4.0.3"
-  },
-  "devDependencies": {},
+  "main": "server.js",
   "scripts": {
-    "start": "./server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LuukBerkers/berkers.dev.git"
   },
-  "author": "Luuk Berkers",
-  "license": "AGPL-3.0",
+  "author": "",
+  "license": "AGPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/LuukBerkers/berkers.dev/issues"
   },
-  "homepage": "https://github.com/LuukBerkers/berkers.dev#readme"
+  "homepage": "https://github.com/LuukBerkers/berkers.dev#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "greenlock-express": "^4.0.3"
+  }
 }
