@@ -1,17 +1,10 @@
 {
   "name": "berkers.dev",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Webserver for berkers.dev",
-  "main": "server.js",
-  "dependencies": {
-    "express": "^4.17.1",
-    "greenlock-express": "^4.0.3",
-    "morgan": "^1.10.0"
-  },
-  "devDependencies": {},
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -22,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/LuukBerkers/berkers.dev/issues"
   },
-  "homepage": "https://github.com/LuukBerkers/berkers.dev#readme"
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "greenlock-express": "^4.0.3",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "pug": "2.0.0-beta11"
+  }
 }
