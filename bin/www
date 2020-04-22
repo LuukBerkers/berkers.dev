@@ -10,7 +10,6 @@ var greenlock = require('greenlock-express');
 /**
  * Create HTTPS server.
  */
-
 var server = greenlock
   .init({
     packageRoot: __dirname + '/../',
