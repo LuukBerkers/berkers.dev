@@ -1,8 +1,39 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+@import "mobile.css";
 
-a {
-  color: #00B7FF;
+/*
+667px is the height of the iPhone 6/6s/7/8, so these rules apply for those in
+landscape and anything larger
+*/
+@media only screen and (min-width: 666px) {
+  /*
+  On non-phones or when phone is in landscape, the navbar element will be 
+  listed horizontally
+  */
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .navbar li {
+    float: left;
+    margin: 0 2px;
+  }
+
+  .navbar ul {
+    padding: 6px 8.25%;
+  }
+
+  .navbar a:hover,
+  .navbar__link--current {
+    border-radius: 8px;
+  }
+
+  .content {
+    /* margin: 8px 12.5%; */
+    margin: 80px 12.5% 8px;
+    animation-name: loadAnimation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
 }

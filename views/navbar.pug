@@ -1,0 +1,11 @@
+nav.navbar
+  ul
+    -
+      var links = {
+        'Home': '/',
+        //- 'Lego': '/lego',
+        'Error Page': '/test'
+      }
+    each path, name in links
+      - var current = (path == loc) ? 'navbar__link--current' : false
+      li: a(href=path class=current)= name

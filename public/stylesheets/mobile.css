@@ -1,0 +1,65 @@
+/* Using mobile style as default */
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h1,
+h2 {
+  font-family: "Roboto Slab", serif;
+}
+
+a {
+  color: hsl(0, 100%, 30%);
+  text-decoration: none;
+}
+
+a:hover {
+  color: hsl(0, 100%, 20%);
+  text-decoration: underline;
+}
+
+p,
+td {
+  hyphens: auto;
+}
+
+.navbar {
+  font-size: 1.2em;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: hsl(0, 75%, 20%);
+}
+
+.navbar a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 12px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: hsl(0, 87.5%, 30%);
+}
+
+.navbar__link--current {
+  background-color: hsl(0, 100%, 40%);
+}
+
+.content {
+  margin: 8px;
+}

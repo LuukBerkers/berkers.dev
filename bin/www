@@ -5,21 +5,28 @@
  */
 
 var app = require('../app');
-var greenlock = require('greenlock-express').init({
-  packageRoot: __dirname + '/../',
-
-  // contact for security and critical bug notices
-  maintainerEmail: 'berkers.luuk@gmail.com',
-
-  // where to look for configuration
-  configDir: './greenlock.d',
-
-  // whether or not to run at cloudscale
-  cluster: false,
-});
+var greenlock = require('greenlock-express');
 
 /**
  * Create HTTPS server.
  */
 
-var server = greenlock.serve(app);
+var server = greenlock
+  .init({
+    packageRoot: __dirname + '/../',
+
+    // contact for security and critical bug notices
+    maintainerEmail: 'berkers.luuk@gmail.com',
+
+    // where to look for configuration
+    configDir: './greenlock.d',
+
+    // whether or not to run at cloudscale
+    cluster: false,
+  })
+  .serve(app);
+
+/**
+ * For testing only
+ */
+// app.listen(8080);
