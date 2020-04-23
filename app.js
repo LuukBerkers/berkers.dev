@@ -19,6 +19,8 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+"use strict";
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
