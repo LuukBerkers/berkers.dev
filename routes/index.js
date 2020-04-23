@@ -26,7 +26,7 @@ var router = express.Router();
 router.get('/', function (req, res, next) {
   // The regex removes the trailing slash if there is one.
   // But not here because the path is only a slash
-  // req.path.replace(/\/+$/, '')
+  // req.originalUrl.replace(/\/+$/, '')
   res.render('index', { title: 'Express', loc: '/' });
 });
 

@@ -15,20 +15,8 @@
 //- You should have received a copy of the GNU Affero General Public License
 //- along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-doctype html
+extends layout
 
-html(lang='en')
-  head
-    meta(charset='UTF-8')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    title= title
-    link(
-      rel='stylesheet'
-      href='https://fonts.googleapis.com/css?family=Roboto%7CRoboto+Slab&display=swap'
-    )
-    link(rel='stylesheet' href='/stylesheets/style.css')
-  body
-    include navbar
-    .content
-      //- h2= loc
-      block content
+block content
+  h1= title
+  p Welcome to #{title}

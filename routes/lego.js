@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 /**
  * Copyright (C) 2020  Luuk Berkers <berkers.luuk@gmail.com>
  *
@@ -21,32 +19,16 @@
 
 'use strict';
 
-/**
- * Module dependencies.
- */
+var express = require('express');
+var router = express.Router();
 
-var app = require('../app');
-var greenlock = require('greenlock-express');
+/* GET LEGO page. */
+router.get('/', function (req, res, next) {
+  // The regex removes the trailing slash if there is one.
+  res.render('lego', {
+    title: 'LEGO',
+    loc: req.originalUrl.replace(/\/+$/, ''),
+  });
+});
 
-/**
- * Create HTTPS server.
- */
-var server = greenlock
-  .init({
-    packageRoot: __dirname + '/../',
-
-    // contact for security and critical bug notices
-    maintainerEmail: 'berkers.luuk@gmail.com',
-
-    // where to look for configuration
-    configDir: './greenlock.d',
-
-    // whether or not to run at cloudscale
-    cluster: false,
-  })
-  .serve(app);
-
-/**
- * For testing only
- */
-// app.listen(8080);
+module.exports = router;

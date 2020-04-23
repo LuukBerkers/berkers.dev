@@ -19,7 +19,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-"use strict";
+'use strict';
 
 var createError = require('http-errors');
 var express = require('express');
@@ -28,6 +28,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+var legoRouter = require('./routes/lego');
 
 var app = express();
 
@@ -42,6 +43,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/lego', legoRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -56,7 +58,7 @@ app.use(function (err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error', { loc: req.originalUrl.replace(/\/+$/, '') });
 });
 
 module.exports = app;
