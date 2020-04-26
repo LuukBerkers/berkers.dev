@@ -19,16 +19,51 @@
 
 'use strict';
 
-var express = require('express');
-var router = express.Router();
+const spawn = require('child_process').spawn;
+const express = require('express');
+var createError = require('http-errors');
 
-/* GET LEGO page. */
+const router = express.Router();
+
 router.get('/', function (req, res, next) {
-  // The regex removes the trailing slash if there is one.
-  res.render('lego', {
-    title: 'LEGO',
-    loc: req.originalUrl.replace(/\/+$/, ''),
-  });
+  res.render('lego', { title: 'Lego', loc: req.originalUrl.split('/')[1] });
+});
+
+router.get('/divisions', function (req, res, next) {
+  if (req.query.div == 0) {
+    throw createError(400, 'Incorrect request values');
+  }
+
+  var accumulator = String();
+
+  var render = (code) => {
+    var result;
+    try {
+      data = JSON.parse(accumulator);
+      result = JSON.stringify(data, null, 2);
+    } catch (SyntaxError) {
+      result = accumulator;
+    }
+
+    res.render('lego-divisions', {
+      title: 'Lego',
+      loc: req.originalUrl.split('/')[1],
+      pyOut: result,
+    });
+  };
+
+  // This python program is free software, licensed under the GPLv3+
+  // The source code can be found at https://github.com/LuukBerkers/divide-lego
+  const python = spawn('python3', [
+    'code/divide-lego/divide.py',
+    '-j',
+    req.query.set,
+    req.query.div,
+  ]);
+
+  python.stdout.on('data', (data) => (accumulator += data));
+  python.stderr.on('data', (data) => (accumulator += data));
+  python.on('close', render);
 });
 
 module.exports = router;

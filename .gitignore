@@ -1,3 +1,7 @@
+# External code
+code/
+
+# Greenlock files
 *.bak
 .greenlockrc
 

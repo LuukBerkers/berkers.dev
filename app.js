@@ -21,11 +21,11 @@
 
 'use strict';
 
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
 var cookieParser = require('cookie-parser');
+var express = require('express');
+var createError = require('http-errors');
 var logger = require('morgan');
+var path = require('path');
 
 var indexRouter = require('./routes/index');
 var legoRouter = require('./routes/lego');
@@ -58,7 +58,7 @@ app.use(function (err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error', { loc: req.originalUrl.replace(/\/+$/, '') });
+  res.render('error', { loc: req.originalUrl.split('/')[1] });
 });
 
 module.exports = app;
