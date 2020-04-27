@@ -7,7 +7,7 @@ http://creativecommons.org/licenses/by-sa/4.0/.
 /* Using mobile style as default */
 
 html {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -20,7 +20,7 @@ h1 {
 
 h1,
 h2 {
-  font-family: "Roboto Slab", serif;
+  font-family: 'Roboto Slab', serif;
 }
 
 a {
@@ -36,6 +36,44 @@ a:hover {
 p,
 td {
   hyphens: auto;
+}
+
+form {
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f2f2f2;
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type='text'],
+input[type='number'] {
+  min-width: 208px;
+  margin: 8px 0 16px;
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+input[type='submit'] {
+  display: block;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: -webkit-stretch;
+  width: stretch;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  background-color: hsl(0, 100%, 40%);
+  cursor: pointer;
+}
+
+input[type='submit']:hover {
+  background-color: hsl(0, 87.5%, 30%);
 }
 
 .navbar {
@@ -67,5 +105,8 @@ td {
 }
 
 .content {
-  margin: 8px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-bottom: 16px;
+  margin: auto;
 }

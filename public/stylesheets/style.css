@@ -36,10 +36,6 @@ landscape and anything larger
   }
 
   .content {
-    /* margin: 8px 12.5%; */
     margin: 80px 12.5% 8px;
-    animation-name: loadAnimation;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
   }
 }

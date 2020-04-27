@@ -20,9 +20,9 @@ nav.navbar
     -
       var links = {
         'Home': '/',
-        //- 'Lego': '/lego',
+        'Lego': '/lego',
         'Error Page': '/test'
       }
     each path, name in links
-      - var current = (path == loc) ? 'navbar__link--current' : false
+      - var current = (path.slice(1) == loc) ? 'navbar__link--current' : false
       li: a(href=path class=current)= name
