@@ -19,4 +19,10 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  form(action='lego/divisions')
+    .division-form
+      label(for='set') Set
+      input(type='text' name='set' placeholder='e.g. 75192-1' required)
+      label(for='div') Divisions
+      input(type='number' name='div' min='1' value='3' required)
+      input(type='submit' value='Divide my set')

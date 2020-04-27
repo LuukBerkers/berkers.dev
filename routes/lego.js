@@ -56,7 +56,6 @@ router.get('/divisions', function (req, res, next) {
   // The source code can be found at https://github.com/LuukBerkers/divide-lego
   const python = spawn('python3', [
     'code/divide-lego/divide.py',
-    '-j',
     req.query.set,
     req.query.div,
   ]);
