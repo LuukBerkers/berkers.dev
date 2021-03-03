@@ -22,6 +22,6 @@
     "greenlock-express": "^4.0.3",
     "http-errors": "^1.7.3",
     "morgan": "^1.10.0",
-    "pug": "^2.0.4"
+    "pug": "^3.0.1"
   }
 }
